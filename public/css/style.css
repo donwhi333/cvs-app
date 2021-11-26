@@ -1,0 +1,509 @@
+/* Markdown */
+html {
+    color: #232333;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+* {
+    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+}
+
+::selection {
+    background: orangered;
+    color: #fff;
+}
+
+h1, h2, h3 {
+    font-size: 1.2rem;
+    margin-top: 2em;
+}
+
+h1::before { color: #00FF00; content: '# '; }
+h2::before { color: orangered; content: '## '; }
+h3::before { color: orangered; content: '### '; }
+
+
+p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+hr {
+    border: 0;
+    border-top: 3px solid orangered;
+    margin: 1em 0;
+}
+
+blockquote {
+    border-left: 3px solid orangered;
+    color: #737373;
+    margin: 0;
+    padding-left: 1em;
+}
+
+a {
+    border-bottom: 3px solid #0000FF;
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    background-color: orangered;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    padding-left: 2ch;
+}
+ul li {
+    text-indent: -2ch;
+}
+ul li::before {
+    content: '* ';
+    font-weight: bold;
+}
+
+/* Images */
+img {
+    border: 3px solid #ececec;
+    max-width: 100%;
+}
+
+figure {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+}
+
+figure img {
+    max-height: 500px;
+}
+
+.expand {
+    border-bottom: none;
+    cursor: zoom-in;
+}
+
+.expand:hover {
+    background-color: transparent;
+}
+
+@media screen and (min-width: 600px) {
+    figure {
+        padding: 0 40px;
+    }
+}
+
+figure h4 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1em;
+}
+figure h4::before {
+    content: '↳ ';
+}
+
+/* Code blocks */
+code {
+    background-color: #f1f1f1;
+    padding: .1em .2em;
+}
+
+pre {
+    background-color: #ececec;
+    line-height: 1.4;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+.highlight pre ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: inherit;
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    font-size: 100%;
+    padding: 0;
+}
+
+/* Containers */
+.content {
+    margin-bottom: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding: 0 1ch;
+    word-wrap: break-word;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+header .logo {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 1em;
+}
+
+/* Common */
+.title h1 {
+    margin-bottom: 0;
+}
+
+time {
+    color: #757575;
+}
+
+/* Posts */
+article .title {
+    margin-bottom: 1em;
+}
+
+/* Timeline */
+.event {
+    display: flex;
+    margin: 0.25em 0;
+}
+.event .date {
+    background-color: orangered;
+    color: #fff;
+    margin-right: 1ch;
+    white-space: nowrap;
+}
+
+/* Lists */
+.list {
+    margin-top: 2em;
+}
+
+.list .title a {
+    border: none;
+}
+
+.list .description a {
+    border-bottom: none;
+    color: orangered;
+}
+.list .description a:hover {
+    color: #fff;
+}
+
+.list h1 {
+    margin-bottom: 0;
+}
+
+.list p {
+    margin: 0;
+}
+
+.list-item {
+    margin-bottom: 2em;
+}
+
+/* Expander */
+.expander-content {
+    overflow-y: hidden;
+}
+
+.expander button {
+    background-color: #ececec;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+.expander button:hover {
+    background-color: #d8d8d8;
+}
+
+/* Callout */
+.callout {
+    background-color: orangered;
+    color: #fff;
+    padding: 1em;
+    margin-top: 20px;
+}
+
+.callout p {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+}
+
+.callout a {
+    border-bottom: 3px solid #fff;
+}
+
+.callout a:hover {
+    background-color: #fff;
+    color: orangered;
+}
+
+/* Asterisk */
+.asterisk {
+    color: orangered;
+}
+
+.asterisk-text {
+    background-color: white;
+    border: 3px solid orangered;
+    color: #232333;
+    display: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    max-width: 200px;
+    padding: 0.5em 1em;
+    position: absolute;
+}
+
+.asterisk-text::before {
+    color: burnt orangered;
+    content: '* ';
+}
+
+.asterisk:hover .asterisk-text {
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact form */
+
+
+*{
+    box-sizing: border-box;;;;;
+}
+
+/* body{
+  background:orangered;
+  color:#485e74;
+  line-height:1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:1em;
+}
+ */
+.container{
+
+    max-width:1170px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+    /* shit */
+    background:orangered;
+    color: white;
+    line-height:1.6;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 2em;
+}
+
+.wrapper > *{
+    padding: 1em;
+}
+
+
+
+/* FORM STYLES */
+
+.contact{
+    background: orangered;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.form_title_1{
+
+    margin-left: -29px;
+
+}
+
+
+.contact form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:50px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contact form label{
+    display:block;
+}
+
+.contact form p{
+    margin:0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contact form .full{
+    grid-column: 1 / 3;
+}
+
+.contact form button, .contact form input, .contact form textarea{
+    width:100%;
+    padding:1em;
+    border:1px solid #c9e6ff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contact form button{
+    background: orangered;
+    border:0;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contact form button:hover,.contact form button:focus{
+    background:orangered;
+    color:#fff;
+    outline:0;
+    transition: background-color 2s ease-out;
+    font-family: 'Roboto Mono', monospace;
+}
+/* LARGE SCREENS */
+@media(min-width:700px){
+    .wrapper{
+        display: grid;
+        /* grid-template: 1fr 1fr; */
+    }
+
+    .wrapper > *{
+        padding:2em;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* media quries */
+
+
+
+@media (max-width: 950px) {
+    .form_container{
+
+        background-color: orangered;
+        color: #fff;
+        padding: 1em;
+        margin-top: 10px;
+        max-height: 100%;
+
+
+
+    }
+    .form_container form{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 16px;
+
+    }
+
+    .form_container form p {
+
+
+    }
+
+
+
+    .form_container  .full {
+
+    }
+
+
+    .contact form label{
+        display:block;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/* contact form */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Incontext */
+.view-in-context {
+    position: relative;
+}
+
+.view-in-context-link {
+    border: none;
+    bottom: 0;
+    color: white;
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+.view-in-context:hover .view-in-context-link {
+    display: block;
+}
+
+.view-in-context-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Table of contents */
+.tableofcontents a {
+    border: none;
+}
+
+
