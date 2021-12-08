@@ -6,6 +6,10 @@ Thanks, you would like an estimate for $photo_category photos with a $photo_fini
 
 const orderNumber = require("./generate-ordernumber.js");
 
+const on = /^[1-9][0-9]?$|^100/
+
+
+
 console.log(orderNumber())
 
 function main(photo_size, photo_number, photo_category, photo_finish) {

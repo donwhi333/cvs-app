@@ -1,0 +1,1295 @@
+{
+  "intents": [
+    {
+      "intent": "covid-symptoms",
+      "examples": [
+        {
+          "text": "Inability to wake or stay awake"
+        },
+        {
+          "text": "New confusion"
+        },
+        {
+          "text": "New loss of taste or smell"
+        },
+        {
+          "text": "Pale, gray, or blue-colored skin, lips, or nail beds, depending on skin tone"
+        },
+        {
+          "text": "Persistent pain or pressure in the chest"
+        },
+        {
+          "text": "Trouble breathing"
+        }
+      ],
+      "description": "covid"
+    },
+    {
+      "intent": "general_ending",
+      "examples": [
+        {
+          "text": "Bye now"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "Finished now, good bye"
+        },
+        {
+          "text": "have a nice day"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": "ending the conversation "
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "have a nice day"
+        },
+        {
+          "text": "thanks bye now"
+        }
+      ],
+      "description": "ending the conversation"
+    },
+    {
+      "intent": "Hello",
+      "examples": [
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "How are you"
+        }
+      ],
+      "description": "greetings "
+    },
+    {
+      "intent": "order_status",
+      "examples": [
+        {
+          "text": "check status"
+        },
+        {
+          "text": "check status of order"
+        },
+        {
+          "text": "is my order ready?"
+        },
+        {
+          "text": "may I know my order status please"
+        },
+        {
+          "text": "Order Status"
+        },
+        {
+          "text": "status"
+        },
+        {
+          "text": "update on the status of my order?"
+        },
+        {
+          "text": "What is the status of my order?"
+        },
+        {
+          "text": "When will my order be ready?"
+        }
+      ],
+      "description": "order status"
+    },
+    {
+      "intent": "store_hours",
+      "examples": [
+        {
+          "text": "hours"
+        },
+        {
+          "text": "store hours"
+        },
+        {
+          "text": "what are your hours of operations"
+        },
+        {
+          "text": "when do you close"
+        },
+        {
+          "text": "when do you open"
+        }
+      ],
+      "description": "hours of operations"
+    },
+    {
+      "intent": "store_location",
+      "examples": [
+        {
+          "text": "address"
+        },
+        {
+          "text": "addy"
+        },
+        {
+          "text": "can you give me directions"
+        },
+        {
+          "text": "find store"
+        },
+        {
+          "text": "go to your company"
+        },
+        {
+          "text": "I need help finding a store"
+        },
+        {
+          "text": "location"
+        },
+        {
+          "text": "location please"
+        },
+        {
+          "text": "what is the address"
+        },
+        {
+          "text": "where are you located"
+        }
+      ],
+      "description": "location of physical of store"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "help",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "help me find my order number",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "I don't know where to find my order number.",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "landmark",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Arts Center train station",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "downtown library",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "North Avenue train station",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "no",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I don't have it",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "I don't know it",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "nah",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "naw",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "no",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "order_number",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "order_key",
+          "patterns": [
+            "\\b[A-Za-z](\\W*\\d){4}"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "symptoms",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Congestion or runny nose",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cough",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Diarrhea",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Fatigue",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Fever or chills",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Muscle or body aches",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Nausea or vomiting",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Shortness of breath or difficulty breathing",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Sore throat",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "yes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "I have my order number",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "yes",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "yes_no",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "no",
+          "synonyms": [
+            "I don't",
+            "nah",
+            "nono",
+            "nope"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "yes",
+          "synonyms": [
+            "yeah",
+            "yep"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud/api/v1/web/373a4b11-2075-4ef2-8d65-5c3d1583f6a1/default/dantewhite.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "I'll be happy to assist you with your order status! Jump to next node ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I’ll be happy to assist you order status "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1637279345300"
+      },
+      "conditions": "#order_status",
+      "dialog_node": "Anything else",
+      "previous_sibling": "Welcome",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1637727490933",
+      "context": {
+        "symptoms": "@symptoms"
+      },
+      "conditions": "@symptoms",
+      "event_name": "input",
+      "dialog_node": "handler_2_1637727490942"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1634014276919",
+      "event_name": "input",
+      "dialog_node": "handler_3_1634014276934"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1637279776722",
+      "context": {
+        "order_number": "@order_number"
+      },
+      "conditions": "@order_number",
+      "event_name": "input",
+      "dialog_node": "handler_3_1637279776741"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1637350433037",
+      "event_name": "input",
+      "dialog_node": "handler_3_1637350433055"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1637347688290",
+      "event_name": "input",
+      "dialog_node": "handler_4_1637347688291"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1637727490933",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1637727490942",
+      "previous_sibling": "handler_2_1637727490942"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1634015630962",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1634015630976",
+      "previous_sibling": "handler_6_1634015630976"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1637347688290",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1637347688291",
+      "previous_sibling": "handler_4_1637347688291"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1637350433037",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1637350433055",
+      "previous_sibling": "handler_3_1637350433055"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1634014276919",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1634014276934",
+      "previous_sibling": "handler_3_1634014276934"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_1_1634015630962",
+      "event_name": "input",
+      "dialog_node": "handler_6_1634015630976"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "May I have your order number?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1637279776722",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1637279776741",
+      "previous_sibling": "handler_3_1637279776741"
+    },
+    {
+      "type": "frame",
+      "title": "where are you located ?",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#store_location",
+      "dialog_node": "node_1_1634020195048",
+      "previous_sibling": "Anything else"
+    },
+    {
+      "type": "standard",
+      "title": "incorrect order number ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your order is incorrect"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "where to find order number ",
+            "options": [
+              {
+                "label": "help",
+                "value": {
+                  "input": {
+                    "text": "help"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_6_1637279345300",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1637715543620"
+      },
+      "conditions": "@order_number != \"order_key\"",
+      "dialog_node": "node_2_1637336938602",
+      "previous_sibling": "node_8_1637281955768"
+    },
+    {
+      "type": "standard",
+      "title": "anything_else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is there anything else I can help you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "no or yes ",
+            "options": [
+              {
+                "label": "no ",
+                "value": {
+                  "input": {
+                    "text": "no "
+                  }
+                }
+              },
+              {
+                "label": "yes ",
+                "value": {
+                  "input": {
+                    "text": "yes"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1637287202212"
+      },
+      "conditions": "anything_else",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1634022776064",
+      "previous_sibling": "node_8_1637721815281"
+    },
+    {
+      "type": "standard",
+      "title": "call search skill",
+      "parent": "node_8_1637724653130",
+      "dialog_node": "node_4_1637725046907"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for being a valued customer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#goodbye",
+      "dialog_node": "node_5_1634022590382",
+      "previous_sibling": "node_7_1637288270011"
+    },
+    {
+      "type": "frame",
+      "title": "Is order number is given",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$order_number"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1637279345300",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1637279676285"
+      },
+      "conditions": "@order_number:order_key",
+      "dialog_node": "node_5_1637279648671"
+    },
+    {
+      "type": "frame",
+      "title": "Web-hook and Query DB!",
+      "parent": "node_6_1637279345300",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "command": "status",
+            "order_number": "$order_number"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1634022776064"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1637279676285",
+      "previous_sibling": "node_5_1637715543620"
+    },
+    {
+      "type": "standard",
+      "title": "help me find my order number",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can find your order number in the confirmation email that was sent when you placed your order. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1637279345300",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1634022776064"
+      },
+      "conditions": "@help",
+      "dialog_node": "node_5_1637715543620",
+      "previous_sibling": "node_2_1637336938602"
+    },
+    {
+      "type": "standard",
+      "title": "provide true location ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We are located at 842 Peach-tree St NE, Atlanta, GA 30308. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1634020195048",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1634022776064"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1634021176449"
+    },
+    {
+      "type": "standard",
+      "title": "May I have your order number? Jump to next node ",
+      "output": {
+        "generic": [
+          {
+            "title": "May I have your order number?",
+            "options": [],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Anything else",
+      "conditions": "true",
+      "dialog_node": "node_6_1637279345300"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " I'll be happy to assist you "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1634022776064",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "@yes_no:yes",
+      "dialog_node": "node_7_1637287214968",
+      "previous_sibling": "node_8_1637287202212"
+    },
+    {
+      "type": "standard",
+      "title": "hours of operations ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We are open 24 hours a day 7 days a week at this location"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1634022776064"
+      },
+      "conditions": "#store_hours",
+      "dialog_node": "node_7_1637288270011",
+      "previous_sibling": "node_1_1634020195048"
+    },
+    {
+      "type": "standard",
+      "title": "1.1 Please say or enter your order number",
+      "parent": "node_6_1637279345300",
+      "conditions": "@order_number:order_key",
+      "dialog_node": "node_8_1637281955768",
+      "previous_sibling": "node_5_1637279648671"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for using CVS Photo Service have a great day!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1634022776064",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1634022590382"
+      },
+      "conditions": "@yes_no:no",
+      "dialog_node": "node_8_1637287202212"
+    },
+    {
+      "type": "frame",
+      "title": "covid-19 symptons user-input",
+      "output": {
+        "generic": []
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@symptoms || #covid-symptoms",
+      "dialog_node": "node_8_1637721815281",
+      "previous_sibling": "node_5_1634022590382"
+    },
+    {
+      "type": "standard",
+      "title": "yes search",
+      "output": {
+        "generic": [
+          {
+            "query": "is  $symptoms @symptoms a symptom of covid",
+            "filter": "",
+            "query_type": "natural_language",
+            "response_type": "search_skill"
+          }
+        ]
+      },
+      "parent": "node_9_1637723189281",
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "@yes_no:yes",
+      "dialog_node": "node_8_1637724468001"
+    },
+    {
+      "type": "standard",
+      "title": "don't search",
+      "parent": "node_9_1637723189281",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1634022590382"
+      },
+      "conditions": "@yes_no:no",
+      "dialog_node": "node_8_1637724653130",
+      "previous_sibling": "node_8_1637724468001"
+    },
+    {
+      "type": "standard",
+      "title": "reply to user",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "sorry, this time I can not answer this question, would you like me to search my knowledge base?"
+              },
+              {
+                "text": "sorry not sure about this, but I can search my knowledge base do I proceed"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "I can search my knowledge",
+            "options": [
+              {
+                "label": "yes",
+                "value": {
+                  "input": {
+                    "text": "yes"
+                  }
+                }
+              },
+              {
+                "label": "no",
+                "value": {
+                  "input": {
+                    "text": "no"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1637721815281",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1637724468001"
+      },
+      "conditions": "#covid-symptoms || @symptoms || #covid-symptoms && @symptoms",
+      "dialog_node": "node_9_1637723189281",
+      "previous_sibling": "slot_9_1637727490933"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "db failed "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1637279676285",
+      "conditions": "anything_else",
+      "dialog_node": "response_10_1637337058783",
+      "previous_sibling": "response_6_1637284039559"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<sentence>We found your order, it is $webhook_result_1.orderDetails.orderStatus</sentence><sentence>. You can pick it up at  <break time=\"200ms\" /> <prosody rate=\"slow\">$webhook_result_1.orderDetails.pickupLocation.address</prosody></sentence><break time=\"200ms\" /><sentence>Please bring your order number when you come to our store.</sentence>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1637279676285",
+      "conditions": "$webhook_result_1.orderDetails.orderStatus.toString().equals(\"ready\")",
+      "dialog_node": "response_1_1637279868942",
+      "previous_sibling": "slot_9_1637350433037"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Welcome",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_1_1637286681025",
+      "previous_sibling": "response_8_1637286577983"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Anything else",
+      "disabled": true,
+      "dialog_node": "response_4_1634019392825",
+      "previous_sibling": "slot_1_1634015630962"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1634020195048",
+      "dialog_node": "response_4_1634021772541",
+      "previous_sibling": "node_6_1634021176449"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To get to our store from North Avenue train station you will need to make a left out of the east entrance of the train station. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1634020195048",
+      "conditions": "@landmark:(North Avenue train station)",
+      "dialog_node": "response_6_1634022004163",
+      "previous_sibling": "response_4_1634021772541"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1637279676285",
+      "conditions": "",
+      "dialog_node": "response_6_1637284039559",
+      "previous_sibling": "response_8_1637279870191"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "It appears your order is still getting processed.  We estimate your order will be ready by 5:00PM CST."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_5_1637279676285",
+      "conditions": "$webhook_result_1.orderDetails.orderStatus.toString().equals(\"not ready\")",
+      "dialog_node": "response_8_1637279870191",
+      "previous_sibling": "response_1_1637279868942"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "location ",
+                "value": {
+                  "input": {
+                    "text": "location "
+                  }
+                }
+              },
+              {
+                "label": "photo ",
+                "value": {
+                  "input": {
+                    "text": "photo status "
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "disabled": true,
+      "conditions": "",
+      "dialog_node": "response_8_1637286577983"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1637279676285",
+      "dialog_node": "response_8_1637350403200",
+      "previous_sibling": "response_10_1637337058783"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "query": "is @symptoms a symptom of covid",
+            "filter": "enriched_text.entities.text@symptom",
+            "query_type": "natural_language",
+            "response_type": "search_skill"
+          },
+          {
+            "values": [
+              {
+                "text": "one sec "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1637724468001",
+      "disabled": true,
+      "conditions": "@symptoms",
+      "dialog_node": "response_9_1637727215988"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_5_1637279648671",
+      "variable": "$order_number",
+      "dialog_node": "slot_10_1637279776722"
+    },
+    {
+      "type": "slot",
+      "parent": "Anything else",
+      "dialog_node": "slot_1_1634015630962",
+      "previous_sibling": "node_6_1637279345300"
+    },
+    {
+      "type": "slot",
+      "parent": "Welcome",
+      "dialog_node": "slot_9_1634014276919",
+      "previous_sibling": "response_1_1637286681025"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1637279648671",
+      "dialog_node": "slot_9_1637347688290",
+      "previous_sibling": "slot_10_1637279776722"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1637279676285",
+      "dialog_node": "slot_9_1637350433037"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1637721815281",
+      "variable": "$symptoms",
+      "dialog_node": "slot_9_1637727490933"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome to CVS Watson Assistant ",
+      "output": {
+        "generic": [
+          {
+            "title": "Welcome to CVS how may I assist you?",
+            "options": [
+              {
+                "label": "location ",
+                "value": {
+                  "input": {
+                    "text": "location "
+                  }
+                }
+              },
+              {
+                "label": "photo status ",
+                "value": {
+                  "input": {
+                    "text": "photo status "
+                  }
+                }
+              },
+              {
+                "label": "hours of operations",
+                "value": {
+                  "input": {
+                    "text": "hours "
+                  }
+                }
+              },
+              {
+                "label": "special deals ",
+                "value": {
+                  "input": {
+                    "text": "specials "
+                  }
+                }
+              },
+              {
+                "label": "covid19 symptoms ",
+                "value": {
+                  "input": {
+                    "text": "covid19 symptoms "
+                  }
+                }
+              },
+              {
+                "label": "photo estimate  ",
+                "value": {
+                  "input": {
+                    "text": "photo estimate "
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Main",
+  "language": "en",
+  "description": ""
+}

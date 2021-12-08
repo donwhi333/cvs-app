@@ -1,0 +1,774 @@
+{
+  "intents": [
+    {
+      "intent": "exit",
+      "examples": [
+        {
+          "text": "2"
+        },
+        {
+          "text": "cancel"
+        },
+        {
+          "text": "exit"
+        },
+        {
+          "text": "get me out"
+        },
+        {
+          "text": "i'm done"
+        }
+      ],
+      "description": "customer changes mind on photo estimate"
+    },
+    {
+      "intent": "help",
+      "examples": [
+        {
+          "text": "help"
+        },
+        {
+          "text": "help please"
+        },
+        {
+          "text": "I don't understand"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "photo_estimate",
+      "examples": [
+        {
+          "text": "estimate"
+        },
+        {
+          "text": "how much are Christmas photos ?"
+        },
+        {
+          "text": "how much are NewYears photos"
+        },
+        {
+          "text": "how much are thanksgiving photos ?"
+        },
+        {
+          "text": "order"
+        },
+        {
+          "text": "order photos"
+        },
+        {
+          "text": "photo estimate"
+        },
+        {
+          "text": "photo inquiry"
+        },
+        {
+          "text": "price of photos"
+        }
+      ],
+      "description": "when the customer wants an estimate for a photo order. "
+    },
+    {
+      "intent": "restart",
+      "examples": [
+        {
+          "text": "begin"
+        },
+        {
+          "text": "reset"
+        },
+        {
+          "text": "restart"
+        },
+        {
+          "text": "start over"
+        }
+      ],
+      "description": "when customer wants to start over with estimate "
+    }
+  ],
+  "entities": [
+    {
+      "entity": "photo_category",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "birthday",
+          "synonyms": [
+            "Birth day",
+            "Birthday"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "christmas",
+          "synonyms": [
+            "Christmas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "graduation",
+          "synonyms": [
+            "Grad",
+            "Graduation"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "halloween",
+          "synonyms": [
+            "Halloween"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "newyears",
+          "synonyms": [
+            "New Years",
+            "NewYears"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "thanksgiving",
+          "synonyms": [
+            "Thanks Giving",
+            "ThanksGiving"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "valentine",
+          "synonyms": [
+            "Valentine"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "wedding",
+          "synonyms": [
+            "Wedding"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "photo_count",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "photo_finish",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "glossy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "lustre",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "matte",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "photo_number",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "order_number",
+          "patterns": [
+            "10",
+            "20",
+            "30"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "photo_size",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "large",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "medium",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "small",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "yes_no",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "no",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "yes",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud/api/v1/web/373a4b11-2075-4ef2-8d65-5c3d1583f6a1/com.price.watson/generate-ordernumber.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1638180298380",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1638277894474",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1638277894491",
+      "previous_sibling": "handler_2_1638277894491"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1638277966310",
+      "context": {
+        "photo_category": "@photo_category"
+      },
+      "conditions": "@photo_category",
+      "event_name": "input",
+      "dialog_node": "handler_1_1638277966320"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "please choose your photo size. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "photo size options ",
+            "options": [
+              {
+                "label": "small",
+                "value": {
+                  "input": {
+                    "text": "small"
+                  }
+                }
+              },
+              {
+                "label": "medium ",
+                "value": {
+                  "input": {
+                    "text": "medium"
+                  }
+                }
+              },
+              {
+                "label": "large ",
+                "value": {
+                  "input": {
+                    "text": "large"
+                  }
+                }
+              },
+              {
+                "label": "",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_7_1638280225741",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1638280225742",
+      "previous_sibling": "handler_4_1638280225742"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_5_1638277894474",
+      "event_name": "input",
+      "dialog_node": "handler_2_1638277894491"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What type of finish would you like on your photos ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "finish types ",
+            "options": [
+              {
+                "label": "glossy ",
+                "value": {
+                  "input": {
+                    "text": "glossy"
+                  }
+                }
+              },
+              {
+                "label": "matte",
+                "value": {
+                  "input": {
+                    "text": "matte"
+                  }
+                }
+              },
+              {
+                "label": "luster",
+                "value": {
+                  "input": {
+                    "text": "luster"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_10_1638279893295",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1638279893296",
+      "previous_sibling": "handler_7_1638279893296"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1638280225741",
+      "context": {
+        "photo_size": "@photo_size"
+      },
+      "conditions": "@photo_size",
+      "event_name": "input",
+      "dialog_node": "handler_4_1638280225742"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1638280500784",
+      "context": {
+        "photo_number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_4_1638280500785"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I will need your photo category please "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "What is your photo category "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_6_1638277966310",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1638277966320",
+      "previous_sibling": "handler_1_1638277966320"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1638279893295",
+      "context": {
+        "photo_finish": "@photo_finish"
+      },
+      "conditions": "@photo_finish",
+      "event_name": "input",
+      "dialog_node": "handler_7_1638279893296"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "how many photos do you have ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_7_1638280500784",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1638280500785",
+      "previous_sibling": "handler_4_1638280500785"
+    },
+    {
+      "type": "standard",
+      "title": "ask customer if they want a quote for a new order of photos. ",
+      "output": {
+        "generic": [
+          {
+            "title": "Would you like to get an estimate for a new order? ",
+            "options": [
+              {
+                "label": "yes ",
+                "value": {
+                  "input": {
+                    "text": "yes"
+                  }
+                }
+              },
+              {
+                "label": "no",
+                "value": {
+                  "input": {
+                    "text": "no"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#photo_estimate",
+      "dialog_node": "node_3_1638179331282",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "if the customer wants an estimate ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok great I'll be happy to assist with your estimate, I will ask you a series of questions to give you an accurate quote "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Please select the best category for your photos  or type it.",
+            "options": [
+              {
+                "label": "Christmas ",
+                "value": {
+                  "input": {
+                    "text": "Christmas photos"
+                  }
+                }
+              },
+              {
+                "label": "NewYears",
+                "value": {
+                  "input": {
+                    "text": "New Years"
+                  }
+                }
+              },
+              {
+                "label": "Wedding",
+                "value": {
+                  "input": {
+                    "text": "Wedding"
+                  }
+                }
+              },
+              {
+                "label": "Birthday",
+                "value": {
+                  "input": {
+                    "text": "Birth Day"
+                  }
+                }
+              },
+              {
+                "label": "Valentine",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "description": " example | Graduation ",
+            "response_type": "option"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@yes_no:yes",
+      "dialog_node": "node_3_1638180298380",
+      "previous_sibling": "node_3_1638179331282"
+    },
+    {
+      "type": "frame",
+      "parent": "node_3_1638180298380",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "photo_size": "$photo_size",
+            "order_number": "$order_number",
+            "photo_finish": "$photo_finish",
+            "photo_number": "$photo_number",
+            "photo_category": "$photo_category"
+          },
+          "result_variable": "$webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@photo_category",
+      "dialog_node": "node_4_1638277914554"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1638277914554",
+      "conditions": "",
+      "dialog_node": "response_5_1638355645962",
+      "previous_sibling": "response_8_1638281766114"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "if you want to place an order, your order number will be $webhook_result_1.orderNumber"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1638277914554",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_8_1638281766114",
+      "previous_sibling": "response_9_1638277966372"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$webhook_result_1.finalPrice dollars  thanks using CVS Photo Price estimater."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1638277914554",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_9_1638277966372"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1638277914554",
+      "variable": "$photo_finish",
+      "dialog_node": "slot_10_1638279893295",
+      "previous_sibling": "slot_6_1638277966310"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1638180298380",
+      "dialog_node": "slot_5_1638277894474",
+      "previous_sibling": "node_4_1638277914554"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1638277914554",
+      "variable": "$photo_category",
+      "dialog_node": "slot_6_1638277966310",
+      "previous_sibling": "response_5_1638355645962"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1638277914554",
+      "variable": "$photo_size",
+      "dialog_node": "slot_7_1638280225741",
+      "previous_sibling": "slot_10_1638279893295"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1638277914554",
+      "variable": "$photo_number",
+      "dialog_node": "slot_7_1638280500784",
+      "previous_sibling": "slot_7_1638280225741"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "title": "how can i help you today? ",
+            "options": [
+              {
+                "label": "photo estimate ",
+                "value": {
+                  "input": {
+                    "text": "photo estimate"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "2"
+    },
+    {
+      "text": "glossy"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "photo price",
+  "language": "en",
+  "description": "photo price"
+}
